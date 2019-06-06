@@ -6,6 +6,8 @@
 #include <time.h>
 using namespace std;
 
+int debug(string str);
+
 class Bomb
 {
 friend class World;
