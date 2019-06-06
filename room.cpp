@@ -251,9 +251,9 @@ void World::printroom()
     touchwin(room);
     wrefresh(room);
 }
-char* World::mapchoose()
+string World::mapchoose()
 {
-	ifstream infile("map.txt");
+	ifstream infile("maps/map.txt");
 	if (infile.fail())
 	{
 		cout << "Map list does not exist !!"<< endl;
@@ -301,9 +301,8 @@ char* World::mapchoose()
 					quitgame();
 					break;
 				case ' ':
-					mapname[j]=mapname[j]+".txt";
-					char *filename=new char [size+5];
-					strcpy (filename,mapname[j].c_str());
+					string filename;
+					filename = string("maps/") + mapname[j] + ".txt";
 					sleep(1);
 					touchwin(mapch);
 					werase(mapch);

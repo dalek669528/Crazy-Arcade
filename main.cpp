@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     while(1) {
         if (kbhit()) {
             x=getch();
-            cout<<x<<endl;
+            // cout<<x<<endl;
             w.checkplayer();
             w.checkbomb();
             switch (x){

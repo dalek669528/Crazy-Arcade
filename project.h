@@ -75,8 +75,8 @@ public:
 	bool setted(int );
 	void gameroom();
 	void printroom();
-	char* mapchoose();
-    void readmap(char *);
+	string mapchoose();
+    void readmap(string);
 	void mainmap();
     void resetitem(int , int);
     void setitem(string , int , int, int);
