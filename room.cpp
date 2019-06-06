@@ -9,6 +9,9 @@ int kbhit(void);
 void World::gameroom()
 {
 	int x;
+	if((LINES < 46) || (COLS < 172)){
+		outofrange(46, 172);
+	}
 	room=newwin(46,172,(LINES-46)/2,(COLS-172)/2);
 	nodelay(room,TRUE);
 	while(1) {

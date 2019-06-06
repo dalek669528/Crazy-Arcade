@@ -47,9 +47,7 @@ void World::readmap(string filename)
 	debug(string("read map ") + filename);
 	debug(to_string(range_x) + " : " + to_string(range_x) + " : " + to_string(LINES) + " : " + to_string(COLS));
 	if((LINES < (range_x*5+3)) || (COLS < (range_y*10+2))){
-		debug("screen out of range");
-		endwin();
-		exit(0);
+		outofrange((range_x*5+3), (range_y*10+2));
 	}
 	game=newwin(range_x*5+3,range_y*10+2,(LINES-(range_x*5+3))/2,(COLS-(range_y*10+2))/2);
  	nodelay(game,TRUE);

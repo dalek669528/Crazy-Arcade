@@ -276,7 +276,23 @@ void World::quitgame()
 			exit (1);
 		}
 		else if(x=='n'){
+			delwin(quit);
 			break;
 		}
 	}
+}
+void World::outofrange(int range_x, int range_y)
+{
+	reminder=newwin(5,30,(LINES-10)/2,(COLS-30)/2);
+    box(reminder,'|','-');
+	mvwprintw(reminder,2,5,"Screen out of range!");
+    touchwin(reminder);
+    wrefresh(reminder);
+	nodelay(reminder,FALSE);
+	while((LINES < range_x)||(COLS < range_y)){
+		debug("screen out of range");
+	    wrefresh(reminder);
+	    usleep(50000);
+	}
+	delwin(reminder);
 }

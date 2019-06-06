@@ -88,11 +88,12 @@ public:
 	void explode(int , int , Bomb *);
 	void checkplayer();
 	void quitgame();
+	void outofrange(int , int);
 	void end(int);
 	void reset();
 	void test();
 private:
-	WINDOW *game, *room, *win, *quit, *mapch, *testw;
+	WINDOW *game, *room, *win, *quit, *mapch, *testw, *reminder;
 	location **map;
 	int ploc[4][2];
 	Player p[4];
