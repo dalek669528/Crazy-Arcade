@@ -5,7 +5,7 @@
 void initial();
 int kbhit ();
 
-main(int argc, char** argv) {
+int main(int argc, char** argv) {
 
 	initial();
 	World w;
@@ -83,13 +83,13 @@ main(int argc, char** argv) {
 		}
 	}
 	endwin();
-	exit(1);
+	return 0;
 }
 
 void initial()
 {
 	initscr();
-	cbreak();
+	cbreak();		//unblocking keyboard intupt
 	start_color();
 	init_color(COLOR_BLACK, 100, 100, 100);
 	init_pair(0,COLOR_BLACK,COLOR_BLACK);
@@ -103,7 +103,8 @@ void initial()
 	nonl();
 	curs_set(0);
 	nodelay(stdscr,TRUE);
-	noecho();
+	// noecho();
+	echo();
 	intrflush(stdscr,FALSE);
 	keypad(stdscr,TRUE);
 	refresh();
